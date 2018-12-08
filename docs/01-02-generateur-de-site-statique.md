@@ -28,7 +28,7 @@ On peut caractériser les sites fabriqués de cette manière :
 
 Material est un thème pour MkDocs. Il est construit en utilisant [les directives de Google Material Design](https://material.io/guidelines/material-design/).
 
-![](http://squidfunk.github.io/mkdocs-material/images/material.png)
+![Material](http://squidfunk.github.io/mkdocs-material/images/material.png)
 
 ## L'annuaire Staticgen
 

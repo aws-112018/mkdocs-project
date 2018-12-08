@@ -55,8 +55,8 @@ Au regard des deux pratiques précédentes, on peut trouver plusieurs définitio
 
 ## Outils CI/CD
 
-_Jenkins_, _GitLab CI_, _Buildbot_, _Drone_, _Concourse_ sont des outils CI/CD, [^cicd-tools-1] mais on en trouvera beaucoup d'autres. [^Référence manquante]
+_Jenkins_, _GitLab CI_, _Buildbot_, _Drone_, _Concourse_, Travis CI, ... sont des outils CI/CD, [^cicd-tools-1] mais on en trouvera beaucoup d'autres. [^Comparison_of_continuous_integration_software]
 
 [^cicd-tools-1]: [Comparatif des outils CI/CD Digital Ocean](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse).
 
-[^Référence manquante]: Référence manquante.
+[^Comparison_of_continuous_integration_software]: (Comparison of continuous integration software)[https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software]

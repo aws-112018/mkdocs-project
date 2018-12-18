@@ -1,0 +1,663 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="In this course we will learn how to deploy websites in continuous deployment with static site generators. We will try to understand numerous Web Dev and hosting concepts and to practice them.">
+      
+      
+        <link rel="canonical" href="https://demo-mkdocs-material.netlify.com/01-08-personalisation-du-projet/">
+      
+      
+        <meta name="author" content="François-Emmanuel Goffinet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copier dans le presse-papier">
+      
+        <meta name="lang:clipboard.copied" content="Copié dans le presse-papier">
+      
+        <meta name="lang:search.language" content="fr">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Aucun document trouvé">
+      
+        <meta name="lang:search.result.one" content="1 document trouvé">
+      
+        <meta name="lang:search.result.other" content="# documents trouvés">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-2.9.1">
+    
+    
+      
+        <title>8. Personnalisation du projet - Learn Continuous Deployment With Static Site Generators</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#8-personnalisation-du-projet" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://demo-mkdocs-material.netlify.com/" title="Learn Continuous Deployment With Static Site Generators" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Learn Continuous Deployment With Static Site Generators
+              </span>
+              <span class="md-header-nav__topic">
+                8. Personnalisation du projet
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Taper pour démarrer la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/goffinet/demo-mkdocs-material/" title="Aller au dépôt" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      goffinet/demo-mkdocs-material
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </span>
+    Learn Continuous Deployment With Static Site Generators
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/goffinet/demo-mkdocs-material/" title="Aller au dépôt" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      goffinet/demo-mkdocs-material
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="" title="Présentation de la formation" class="md-nav__link">
+      Présentation de la formation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      1. Premier projet en déploiement continu
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        1. Premier projet en déploiement continu
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-00-premier-projet-en-deploiement-continu/" title="Premier projet de déploiement continu" class="md-nav__link">
+      Premier projet de déploiement continu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-01-deploiement-continu/" title="1. Le déploiement continu" class="md-nav__link">
+      1. Le déploiement continu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-02-generateur-de-site-statique/" title="2. Générateur de site statique" class="md-nav__link">
+      2. Générateur de site statique
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-03-gestionnaire-de-version-git-et-github/" title="3. Gestionnaire de version Git et service GitHub" class="md-nav__link">
+      3. Gestionnaire de version Git et service GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-04-planification-du-projet/" title="4. Planification du projet" class="md-nav__link">
+      4. Planification du projet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-05-service-netlify/" title="5. Service Netlify" class="md-nav__link">
+      5. Service Netlify
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-06-configuration-dns/" title="6. Configuration DNS" class="md-nav__link">
+      6. Configuration DNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="01-07-https-gratuit-a-la-demande/" title="7. HTTPS gratuit à la demandes" class="md-nav__link">
+      7. HTTPS gratuit à la demandes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        8. Personnalisation du projet
+      </label>
+    
+    <a href="01-08-personalisation-du-projet/" title="8. Personnalisation du projet" class="md-nav__link md-nav__link--active">
+      8. Personnalisation du projet
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table des matières</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-personnalisez-votre-site" title="1. Personnalisez votre site" class="md-nav__link">
+    1. Personnalisez votre site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aller-plus-loin" title="2. Aller plus loin" class="md-nav__link">
+    2. Aller plus loin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="autres-projets-avec-generateur-de-site-statique/" title="2. Autre projets avec générateur de site statique" class="md-nav__link">
+      2. Autre projets avec générateur de site statique
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="noway/" title="3. Apprendre à écrire en Markdown" class="md-nav__link">
+      3. Apprendre à écrire en Markdown
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table des matières</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-personnalisez-votre-site" title="1. Personnalisez votre site" class="md-nav__link">
+    1. Personnalisez votre site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aller-plus-loin" title="2. Aller plus loin" class="md-nav__link">
+    2. Aller plus loin
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/goffinet/demo-mkdocs-material/edit/master/docs/01-08-personalisation-du-projet.md" title="Editer cette page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="8-personnalisation-du-projet">8. Personnalisation du projet<a class="headerlink" href="#8-personnalisation-du-projet" title="Permanent link">&para;</a></h1>
+<h2 id="1-personnalisez-votre-site">1. Personnalisez votre site<a class="headerlink" href="#1-personnalisez-votre-site" title="Permanent link">&para;</a></h2>
+<p><strong>Pratique :</strong> Révisez Git avec le cours en ligne <a href="https://try.github.io/">https://try.github.io/</a> ou encore avec le livre en ligne avec <a href="https://git-scm.com/book/en/v2/">https://git-scm.com/book/en/v2/</a>.</p>
+<p><strong>Pratique :</strong> <a href="https://www.markdowntutorial.com/">Apprenez le langage Markdown</a>: Markdown est essentiellement une syntaxe pour un format de texte simple, facile à lire, qui est conçu pour être converti en HTML (<a href="https://www.oreilly.com/ideas/static-site-generators">source</a>). La plupart des moteurs de blogs ont commencé à offrir un support pour Markdown, y compris Wordpress.</p>
+<p><strong>Pratique :</strong> Installez localement un outil de développement web qui offre un support du langage Markdown, comme <a href="http://www.sublimetext.com/">Sublime Text</a>, <a href="https://atom. io/">Atom</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, ou <a href="http://brackets.io/">Brackets</a>.</p>
+<p>Localement, personnalisez votre site et déployez-le:</p>
+<ol>
+<li>Cloner localement le "repository" <code>https://github.com/myaccount/monsite01/</code>.</li>
+<li>Ajoutez des pages de contenu écrites dans Markdown dans le répertoire <code>docs/</code>.</li>
+<li>Configurez le fichier <code>mkdocs.yml</code> et ajoutez la partie récapitulative.</li>
+<li>Validez et appuyez sur votre nouveau code avec <code>git</code>.</li>
+</ol>
+<div class="codehilite"><pre><span></span>git clone https://github.com/myaccount/monsite01/
+<span class="nb">cd</span> monsite01
+vi docs/index.md
+vi mkdocs.yml
+git add *
+git commit -m <span class="s2">&quot;personnalisation de site&quot;</span>
+git push
+</pre></div>
+
+<p>Veuillez revenir à votre interface Web Netlify pour vérifier votre build et le déploiement du site Web.</p>
+<p>Note: Vous pouvez trouver de belles photos de qualité sur <a href="https://unsplash.com/">Unsplash</a> (gratuit). Vous pouvez optimiser et transformer des images avec <a href="https://snappa.com/">Snappa</a> (commercial), <a href="https://cloudconvert.com/">CloudConvert</a> permet de convertir des fichiers notamment vers le format Markdown.</p>
+<h2 id="2-aller-plus-loin">2. Aller plus loin<a class="headerlink" href="#2-aller-plus-loin" title="Permanent link">&para;</a></h2>
+<p><strong>Pratique :</strong> Revoir <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">théorie des motifs MVC</a>, <a href="https: // fr .wikipedia.org / wiki / Cascading_Style_Sheets">concepts CSS</a>, <a href="https://en.wikipedia.org/wiki/HTML">langage HTML</a> et <a href="https://en.wikipedia.org/wiki/Search_engine_optimization">concepts SEO</a>, Google Analytics, Google Search Consol, Woorank.</p>
+<p>Allez plus loin avec vos nouvelles compétences:</p>
+<ol>
+<li>Créez un ID de suivi <a href="https://analytics.google.com/">Google Analytics</a>.</li>
+<li>Créez un site dans votre compte <a href="https://disqus.com/admin/">disqus</a>.</li>
+<li>Enregistrez le site sur <a href="https://www.google.com/webmasters/tools/home?hl=fr&amp;pli=1">Google Search Console</a> et lancez l'indexation du site.</li>
+<li>Créez un <code>docs/images/</code> pour stocker des images locales au site Web.</li>
+<li>Intégrez un formulaire Mailchimp ou un widget Twitter, ou ajoutez un bloc de bannière AdSense.</li>
+<li><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">Modifier le thème MkDocs</a> et/ou exploiter leur CSS.</li>
+<li>Validez votre site avec <a href="https://www.woorank.com/">Woorank</a>.</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="01-07-https-gratuit-a-la-demande/" title="7. HTTPS gratuit à la demandes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Précédent
+                </span>
+                7. HTTPS gratuit à la demandes
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="autres-projets-avec-generateur-de-site-statique/" title="2. Autre projets avec générateur de site statique" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Suivant
+                </span>
+                2. Autre projets avec générateur de site statique
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 François-Emmanuel Goffinet
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/goffinet" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/fegoffinet" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/fegoffinet/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://www.goffinet.org" class="md-footer-social__link fa fa-building-o"></a>
+    
+      <a href="https://biblio.goffinet.org" class="md-footer-social__link fa fa-book"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.d0060b13.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.fr.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-21733018-12","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
